@@ -8,7 +8,7 @@ Le but de ce guide de style est de proposer des conseils sur le développement d
 
 >Si vous appréciez ce guide, visitez mon cours [Angular Patterns: Clean Code](http://jpapa.me/ngclean) sur Pluralsight qui va de pair avec ce guide.
 
-  [![Angular Patterns: Clean Code](https://raw.githubusercontent.com/johnpapa/angular-styleguide/master/assets/ng-clean-code-banner.png)](http://jpapa.me/ngclean)
+  [![Angular Patterns: Clean Code](https://raw.githubusercontent.com/johnpapa/angular-styleguide/master/a1/assets/ng-clean-code-banner.png)](http://jpapa.me/ngclean)
 
 ## Remerciements individuels et à la communauté
 Ne jamais travailler en vase clos. J'ai trouvé que la communauté Angular est une incroyable communauté dont les membres ont à cœur de partager leurs expériences. Ainsi, avec mon ami et expert d'Angular, Todd Motto, nous avons collaboré sur de nombreux styles et conventions. Nous sommes d'accord sur la plupart, et nous divergeons sur d'autres. Je vous encourage à visiter [le guide de style de Todd](https://github.com/toddmotto/angularjs-styleguide) pour vous faire votre propre avis sur son approche et en quoi elle diverge.
@@ -19,7 +19,7 @@ Beaucoup de mes styles proviennent des nombreuses séances de pair programming a
 Bien que ce guide explique le *quoi*, le *pourquoi* et le *comment*, il m'est utile de pouvoir les visualiser dans la pratique. Ce guide est accompagné par une application d'exemple qui suit ces styles et ces modèles. Vous pouvez trouver l'[application d'exemple (intitulée modular) ici](https://github.com/johnpapa/ng-demos) dans le répertoire `modular`. Vous pouvez librement le récupérer, le cloner, ou le *forker*. [Les instructions pour l’exécuter sont contenues dans ce readme](https://github.com/johnpapa/ng-demos/tree/master/modular).
 
 ## Traductions
-[Les traductions de ce guide stylistique pour Angular](https://github.com/johnpapa/angular-styleguide/tree/master/i18n) sont maintenues par la communauté et peuvent être trouvées ici.
+[Les traductions de ce guide stylistique pour Angular](https://github.com/johnpapa/angular-styleguide/tree/master/a1/i18n) sont maintenues par la communauté et peuvent être trouvées ici.
 
 ## Table des matières
 
@@ -449,7 +449,7 @@ Bien que ce guide explique le *quoi*, le *pourquoi* et le *comment*, il m'est ut
       }
   ```
 
-    ![Contrôleur utilisant la syntaxe avec les membres bindables au dessus](https://raw.githubusercontent.com/johnpapa/angular-styleguide/master/assets/above-the-fold-1.png)
+    ![Contrôleur utilisant la syntaxe avec les membres bindables au dessus](https://raw.githubusercontent.com/johnpapa/angular-styleguide/master/a1/assets/above-the-fold-1.png)
 
   Note : Si la fonction est un *oneliner*, vous pouvez la garder en haut du contrôleur, tant que la lisibilité n'est pas affectée.
 
@@ -792,7 +792,7 @@ Bien que ce guide explique le *quoi*, le *pourquoi* et le *comment*, il m'est ut
 
   De cette façon, les *bindings* sont répliqués à travers l'objet de capture, les valeurs primitives ne peuvent pas se mettre à jour toutes seules grâce au *revealing module pattern*.
 
-    ![Factories utilisant la syntaxe avec les membres bindables au dessus](https://raw.githubusercontent.com/johnpapa/angular-styleguide/master/assets/above-the-fold-2.png)
+    ![Factories utilisant la syntaxe avec les membres bindables au dessus](https://raw.githubusercontent.com/johnpapa/angular-styleguide/master/a1/assets/above-the-fold-2.png)
 
 ### Déclaration des fonctions pour cacher les détails d'implémentation
 ###### [Style [Y053](#style-y053)]
@@ -1200,7 +1200,7 @@ Bien que ce guide explique le *quoi*, le *pourquoi* et le *comment*, il m'est ut
 
     Note : La directive ci-dessous montre une façon parmi d'autres d'utiliser *scope* à l'intérieur de la fonction `link` et dans un contrôleur de directive, par l'utilisation de `controllerAs`. J'ai *inliné* le template pour tout mettre au même endroit.
 
-    Note : Concernant l'injection de dépendances, voir [Annoter manuellement les dépendances à injecter](#annoter-manuellement-les-dépendances-à-injecter).
+    Note : Concernant l'injection de dépendances, voir [Annoter manuellement les dépendances à injecter](#annotation-manuelle-pour-linjection-de-dépendances).
 
     Note : Remarquez que le contrôleur de la directive est à l'extérieur de la *closure* de la directive. Cette façon de faire évite le problème d'indisponibilité des injections après le `return`.
 
@@ -1451,7 +1451,7 @@ Bien que ce guide explique le *quoi*, le *pourquoi* et le *comment*, il m'est ut
           });
   }
 
-  function moviePrepService(movieService) {
+  function moviesPrepService(movieService) {
       return movieService.getMovies();
   }
 
@@ -1466,7 +1466,7 @@ Bien que ce guide explique le *quoi*, le *pourquoi* et le *comment*, il m'est ut
         vm.movies = moviesPrepService.movies;
   }
   ```
-    Note : Les dépendances sur `movieService` dans l'exemple ne sont pas directement compatibles avec le processus de minification. Pour plus de détails sur la façon de rendre ce code minifiable sans risques, voir la section sur l'[injection de dépendances](#manual-annotating-for-dependency-injection) et sur [la minification et les annotations](#minification-and-annotation).
+    Note : Les dépendances sur `movieService` dans l'exemple ne sont pas directement compatibles avec le processus de minification. Pour plus de détails sur la façon de rendre ce code minifiable sans risques, voir la section sur l'[injection de dépendances](#annotation-manuelle-pour-linjection-de-dépendances) et sur [la minification et les annotations](#minification-et-annotation).
 
 **[Retour en haut de page](#table-des-matières)**
 
@@ -2017,7 +2017,7 @@ Bien que ce guide explique le *quoi*, le *pourquoi* et le *comment*, il m'est ut
 
     function creditService() { }
 
-    // credit.service.js
+    // customers.service.js
     angular
         .module
         .service('customersService', customersService);
@@ -2050,7 +2050,7 @@ Bien que ce guide explique le *quoi*, le *pourquoi* et le *comment*, il m'est ut
 ### Modules
 ###### [Style [Y127](#style-y127)]
 
-  - Lorqu'il y a de multiples modules, nommez le fichier du module principal ˋapp.module.jsˋ et nommez les autres modules qui en sont dépendants d'après ce qu'ils représentent. Par exemple, nommez un module d'administration ˋadmin.module.jsˋ. Les noms des modules déclarés seraient alors respectivement ˋappˋ et ˋadminˋ.
+  - Lorsqu'il y a de multiples modules, nommez le fichier du module principal ˋapp.module.jsˋ et nommez les autres modules qui en sont dépendants d'après ce qu'ils représentent. Par exemple, nommez un module d'administration ˋadmin.module.jsˋ. Les noms des modules déclarés seraient alors respectivement ˋappˋ et ˋadminˋ.
 
     *Pourquoi ?* : Fournit de la cohérence pour les applications modulaires, et pour prévoir l'extension des applications.
 
@@ -2203,7 +2203,7 @@ Bien que ce guide explique le *quoi*, le *pourquoi* et le *comment*, il m'est ut
             session-detail.controller.js
     ```
 
-      ![Image d'un exemple de structure d'application](https://raw.githubusercontent.com/johnpapa/angular-styleguide/master/assets/modularity-2.png)
+      ![Image d'un exemple de structure d'application](https://raw.githubusercontent.com/johnpapa/angular-styleguide/master/a1/assets/modularity-2.png)
 
       Note : N'utilisez pas une structuration « répertoire-type ». Cela requiert de se déplacer entre de multiples répertoires lors du travail sur une fonctionnalité et cela devient rapidement difficile à manier lorsque l'application passe de à cinq, dix ou plus de vingt-cinq vues et contrôleurs (et autres fonctionnalités), ce qui complique la localisation par rapport à une structure en « répertoire-fonctionnalité ».
 
@@ -2256,7 +2256,7 @@ Bien que ce guide explique le *quoi*, le *pourquoi* et le *comment*, il m'est ut
 
   - Créez de petits modules qui encapsulent une seule responsabilité.
 
-    *Pourquoi ?* : Les applications modulaires rendent facile la compossibilité rapide puisqu'elles permettent aux équipes de développement de construire verticalement des sections de l'application et de livrer incrémentalement. Cela signifie que nous pouvons brancher de nouvelles fonctionnalités au fur et à mesure de leur développement.
+    *Pourquoi ?* : Les applications modulaires rendent facile la composabilité rapide puisqu'elles permettent aux équipes de développement de construire verticalement des sections de l'application et de livrer incrémentalement. Cela signifie que nous pouvons brancher de nouvelles fonctionnalités au fur et à mesure de leur développement.
 
 ### Création d'un module applicatif
 ###### [Style [Y161](#style-y161)]
@@ -2297,7 +2297,7 @@ Bien que ce guide explique le *quoi*, le *pourquoi* et le *comment*, il m'est ut
 
   - Le module racine de l'application dépend des modules des fonctionnalités spécifiques et de certains modules partagés et réutilisables.
 
-    ![Modularité et Dépendences](https://raw.githubusercontent.com/johnpapa/angular-styleguide/master/assets/modularity-1.png)
+    ![Modularité et Dépendences](https://raw.githubusercontent.com/johnpapa/angular-styleguide/master/a1/assets/modularity-1.png)
 
     *Pourquoi?* : Le module principal de l'application continent manifeste des fonctionnalités de l'application.
 
@@ -2529,7 +2529,7 @@ Les tests unitaires aident à maintenir un code source propre, ainsi j'ai inclus
     "mocha": true,
     ```
 
-  ![Outils de test](https://raw.githubusercontent.com/johnpapa/angular-styleguide/master/assets/testing-tools.png)
+  ![Outils de test](https://raw.githubusercontent.com/johnpapa/angular-styleguide/master/a1/assets/testing-tools.png)
 
 ### Organisation des tests
 ###### [Style [Y197](#style-y197)]

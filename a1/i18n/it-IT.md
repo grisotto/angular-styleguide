@@ -12,7 +12,7 @@ L'obbiettivo di questa guida stilistica è di fare da vademecum alla costruzione
 
 >Se ti piace questa guida, dai un'occhiata al mio corso [Angular Patterns: Clean Code](http://jpapa.me/ngclean) (in inglese) su Pluralsight come complemento a questa guida.
 
-  [![Angular Patterns: Clean Code](https://raw.githubusercontent.com/johnpapa/angularjs-styleguide/master/assets/ng-clean-code-banner.png)](http://jpapa.me/ngclean)
+  [![Angular Patterns: Clean Code](https://raw.githubusercontent.com/johnpapa/angularjs-styleguide/master/a1/assets/ng-clean-code-banner.png)](http://jpapa.me/ngclean)
 
 ## Eccezionalità della comunità e riconoscimenti
 Mai lavorare nel vuoto. Ritengo che la comunità intorno ad Angular sia un gruppo incredibile con la passione di condividere le esperienze. Perciò, Todd Motto, un amico ed un esperto di Angular, ed io abbiamo collaborato su molti stili e convenzioni. Su molto siamo d'accordo, su altro meno.  Ti invito a controllare le [linee guida di Todd](https://github.com/toddmotto/angularjs-styleguide) per avere cognizione del suo approccio e di come paragonarle.
@@ -466,7 +466,7 @@ Invece usa la più semplice sintassi setter.
   }
   ```
 
-    ![Controller che usa "Above the Fold"](https://raw.githubusercontent.com/johnpapa/angularjs-styleguide/master/assets/above-the-fold-1.png)
+    ![Controller che usa "Above the Fold"](https://raw.githubusercontent.com/johnpapa/angular-styleguide/master/a1/assets/above-the-fold-1.png)
 
   Nota: Se la funzione è di 1 linea considera di poterla lasciare in alto fino a che la leggibilità non ne è compromessa.
 
@@ -811,7 +811,7 @@ Invece usa la più semplice sintassi setter.
   In questo modo i binding si riflettono in tutto l'oggetto host, i valori di base non possono essere solamente aggiornati usando il revealing module pattern.
 
 
-    ![Factory che usano "Above the Fold"](https://raw.githubusercontent.com/johnpapa/angularjs-styleguide/master/assets/above-the-fold-2.png)
+    ![Factory che usano "Above the Fold"](https://raw.githubusercontent.com/johnpapa/angular-styleguide/master/a1/assets/above-the-fold-2.png)
 
 ### Dichiarazioni di funzione per nascondere i dettagli di implementazione
 ###### [Stile [Y053](#stile-y053)]
@@ -2223,7 +2223,7 @@ Invece usa la più semplice sintassi setter.
             session-detail.controller.js
     ```
 
-      ![Struttura dell'App di Esempio](https://raw.githubusercontent.com/johnpapa/angularjs-styleguide/master/assets/modularity-2.png)
+      ![Struttura dell'App di Esempio](https://raw.githubusercontent.com/johnpapa/angular-styleguide/master/a1/assets/modularity-2.png)
 
       Nota: Non usare una strutturazione del tipo cartella-per-tipo per la tua app. Questo richiede spostarsi tra molte cartelle quando si lavora su una funzionalità e diventa rapidamente scomodo quando l'app cresce di 5, 10 o più di 25 tra view e controller (ed altre funzionalità), per cui è più difficile rispetto alla localizzazione basata su cartella-per-funzionalità.
 
@@ -2317,7 +2317,7 @@ Invece usa la più semplice sintassi setter.
 
   - Il modulo principale dell'applicazione dipende dai moduli di funzionalità specifiche dell'app e da qualunque altro modulo che sia condiviso o riusabile.
 
-    ![Modularità e Dipendenze](https://raw.githubusercontent.com/johnpapa/angularjs-styleguide/master/assets/modularity-1.png)
+    ![Modularità e Dipendenze](https://raw.githubusercontent.com/johnpapa/angular-styleguide/master/a1/assets/modularity-1.png)
 
     *Perché?*: Il modulo principale dell'app contiene un manifesto che sia facilmente identificabile con le funzionalità dell'applicazione.
 
@@ -2547,7 +2547,7 @@ Gli unit test aiutano a mantenere il codice più chiaro, perciò ho incluso alcu
     "mocha": true,
     ```
 
-  ![Strumenti per i test](https://raw.githubusercontent.com/johnpapa/angularjs-styleguide/master/assets/testing-tools.png)
+  ![Strumenti per i test](https://raw.githubusercontent.com/johnpapa/angular-styleguide/master/a1/assets/testing-tools.png)
 
 ### Organizzazione dei test
 ###### [Stile [Y197](#stile-y197)]

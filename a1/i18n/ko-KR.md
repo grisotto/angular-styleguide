@@ -6,12 +6,12 @@ Angular 팀의 리더인 Igor Minar 에게 특별히 감사합니다. 이 스타
 ## Purpose
 *팀환경을 위한 방향을 제시하는 Angular 스타일 가이드 by [@john_papa](//twitter.com/john_papa)*
 
-만약 Angular [Angular](//angularjs.org) 어플리케이션의 문법, 컨벤션, 구조화를 위한 스타일 가이드를 찾고 있다면 제대로 오셨습니다. 여기 제시된 스타일들은 제 팀 단위 개발 경험, 프레젠테이션, [Pluralsight training courses](http://pluralsight.com/training/Authors/Details/john-papa)를 토대로 만들어졌습니다.
+만약 [Angular](//angularjs.org) 어플리케이션의 문법, 컨벤션, 구조화를 위한 스타일 가이드를 찾고 있다면 제대로 오셨습니다. 여기 제시된 스타일들은 제 팀 단위 개발 경험, 프레젠테이션, [Pluralsight training courses](http://pluralsight.com/training/Authors/Details/john-papa)를 토대로 만들어졌습니다.
 
 이 스타일 가이드의 목적은 Angular 어플리케이션을 만드는 길잡이 역할을 하기 위함이며 더 나아가 왜 내가 이런 것들을 선택했는지 보여주기 위함입니다.
 >만약 이 가이드가 마음에 든다면 Pluralsight 에 올려놓은 저의 강의를 참고하시기 바랍니다. [Angular Patterns: Clean Code](http://jpapa.me/ngclean)
 
-  [![Angular Patterns: Clean Code](https://raw.githubusercontent.com/johnpapa/angular-styleguide/master/assets/ng-clean-code-banner.png)](http://jpapa.me/ngclean)
+  [![Angular Patterns: Clean Code](https://raw.githubusercontent.com/johnpapa/angular-styleguide/master/a1/assets/ng-clean-code-banner.png)](http://jpapa.me/ngclean)
 
 ## Community Awesomeness and Credit
 저는 Angular 커뮤니티의 대단함을 알게 되었습니다. 그들은 자신들의 경험을 공유하는데 열정적이기 때문입니다. 나의 친구이자 Angular 전문가인 Todd Motto 와 나는 많은 스타일과 컨벤션을 위해 공동작업을 하였습니다. 대부분 우리는 서로 동의하였지만 어떤 부분에서는 의견이 갈렸습니다. Todd의 접근방법이 궁금하고 이를 비교해보고 싶으신 분들은 다음 링크에 가서 확인해보시면 좋을 것 같습니다 [Todd's guidelines](https://github.com/toddmotto/angularjs-styleguide).
@@ -115,6 +115,23 @@ Angular 팀의 리더인 Igor Minar 에게 특별히 감사합니다. 이 스타
 
 **[Back to top](#table-of-contents)**
 
+### Small Functions
+###### [style [Y002](#style-y002)]
+
+  - 작은 함수를 정의하세요, 75줄을 넘지 마세요 (적을수록 좋습니다).
+
+  *이유*: 하나의 일을하고 하나의 목적을 수행하는 작은 함수는 테스트하기 쉽습니다.
+
+  *이유*: 작은 함수는 재사용을 촉진합니다.
+
+  *이유*: 작은 함수는 읽기 쉽습니다.
+
+  *이유*: 작은 함수는 유지하기 쉽습니다.
+
+  *이유*: 작은 함수는 외부 scpoe와 변수를 공유하거나, 원하지 않는 closure를 만들거나, 원하지 않는 의존성과의 결합을 통해 만들어지는 숨겨진 버그를 피하는데 도움이 됩니다.
+
+**[Back to top](#table-of-contents)**
+
 ## IIFE
 ### JavaScript Closures
 ###### [Style [Y010](#style-y010)]
@@ -206,7 +223,7 @@ Angular 팀의 리더인 Igor Minar 에게 특별히 감사합니다. 이 스타
   ]);
   ```
 
-  대신 간단한 세터 구무을 사용하고, 체인으로 나머지 부분을 처리하세요.
+  대신 간단한 세터 구문을 사용하고, 체인으로 나머지 부분을 처리하세요.
 
   ```javascript
   /* recommended */
@@ -330,7 +347,7 @@ Angular 팀의 리더인 Igor Minar 에게 특별히 감사합니다. 이 스타
 ### controllerAs Controller Syntax
 ###### [Style [Y031](#style-y031)]
 
-  - `전형적인 컨트롤러 `$scope` 구문 대신 `controllerAs` 구문을 사용하세요.
+  - 전형적인 컨트롤러 `$scope` 구문 대신 `controllerAs` 구문을 사용하세요.
 
   - `controllerAs` 구문은 `$scope` 에 바인딩 하기위해 컨트롤러 안에서 `this`를 사용합니다.
 
@@ -472,7 +489,7 @@ Angular 팀의 리더인 Igor Minar 에게 특별히 감사합니다. 이 스타
   }
   ```
 
-    !["Above the Fold"를 사용하는 컨트롤러](https://raw.githubusercontent.com/johnpapa/angular-styleguide/master/assets/above-the-fold-1.png)
+    !["Above the Fold"를 사용하는 컨트롤러](https://raw.githubusercontent.com/johnpapa/angular-styleguide/master/a1/assets/above-the-fold-1.png)
 
   주의: 만약 코드 가독성에 영향을 주지않고 1줄이라면 그냥 위쪽에 두어도 됩니다.
 
@@ -817,7 +834,7 @@ Angular 팀의 리더인 Igor Minar 에게 특별히 감사합니다. 이 스타
 
   호스트 오브젝트 내에서 이런 식의 바인딩이 반영이 되어서, 원시 값들은 모듈 패턴 노출 방식으로 업데이트 되지 않습니다.
 
-    ![Factories Using "Above the Fold"](https://raw.githubusercontent.com/johnpapa/angular-styleguide/master/assets/above-the-fold-2.png)
+    ![Factories Using "Above the Fold"](https://raw.githubusercontent.com/johnpapa/angular-styleguide/master/a1/assets/above-the-fold-2.png)
 
 ### Function Declarations to Hide Implementation Details
 ###### [Style [Y053](#style-y053)]
@@ -1141,7 +1158,7 @@ Angular 팀의 리더인 Igor Minar 에게 특별히 감사합니다. 이 스타
 ### Manipulate DOM in a Directive
 ###### [Style [Y072](#style-y072)]
 
-  - DOM을 직접 다루게 되었다면, 디렉티브를 사용하세요. 만약 CSS나 [animation services](https://docs.angularjs.org/api/ngAnimate), Angular templating, [`ngShow`](https://docs.angularjs.org/api/ng/directive/ngShow) or [`ngHide`](https://docs.angularjs.org/api/ng/directive/ngHide) 등의 방식을 사용할 수 있다면 이를 사용하세요. 예를 들, 만약 디렉티브의 기능이 간단히 보여줌, 숨김 기능만 있다면 ngHide/ngShow를 사용하세요.
+  - DOM을 직접 다루게 되었다면, 디렉티브를 사용하세요. 만약 CSS나 [animation services](https://docs.angularjs.org/api/ngAnimate), Angular templating, [`ngShow`](https://docs.angularjs.org/api/ng/directive/ngShow) or [`ngHide`](https://docs.angularjs.org/api/ng/directive/ngHide) 등의 방식을 사용할 수 있다면 이를 사용하세요. 예를 들어, 만약 디렉티브의 기능이 간단히 보여줌, 숨김 기능만 있다면 ngHide/ngShow를 사용하세요.
 
     *이유*: DOM을 다루는 코드는 테스트, 수정이 어렵고 대부분 더 나은 구현 방법이 존재합니다. (e.g. CSS, 애니매이션, 템플릿)
 
@@ -1667,7 +1684,6 @@ Angular 팀의 리더인 Igor Minar 에게 특별히 감사합니다. 이 스타
     }
     ```
 
-    When the above code is run through ng-annotate it will produce the following output with the `$inject` annotation and become minification-safe.
     위의 코드가 포함된 코드가 ng-annotate를 거치게 되면 `$inject` 부분을 생성하게 되어 최소화 안전 코드가 됩니다.
 
     ```javascript
@@ -1797,7 +1813,7 @@ Angular 팀의 리더인 Igor Minar 에게 특별히 감사합니다. 이 스타
 
     *이유*: 예를 들어 XHR 호출이나 프라미스 실패 시, 좀 더 일관적인 방식으로 코드에서 발생한 예외를 잡아줍니다.
 
-    주의: 예외 캐쳐는 당신이 예상했던 호출에서 특정 예외가 발생했을 때 그것을 잡아내고 대처하는데 좋습ㄴ디ㅏ. 예를 들어 원격 웹 서비스에 접속해서 데이터를 가져오는 XHR 호출을 만들 때 그 서비스로 부터 예외를 받아서 특정한 방식으로 대처할 수 있습니다.
+    주의: 예외 캐쳐는 당신이 예상했던 호출에서 특정 예외가 발생했을 때 그것을 잡아내고 대처하는데 좋습니다. 예를 들어 원격 웹 서비스에 접속해서 데이터를 가져오는 XHR 호출을 만들 때 그 서비스로 부터 예외를 받아서 특정한 방식으로 대처할 수 있습니다.
 
     ```javascript
     /* recommended */
@@ -2059,7 +2075,6 @@ Angular 팀의 리더인 Igor Minar 에게 특별히 감사합니다. 이 스타
 ### Directive Component Names
 ###### [Style [Y126](#style-y126)]
 
-  - Use consistent names for all directives using camel-case. Use a short prefix to describe the area that the directives belong (some example are company prefix or project prefix).
   - 캐멀 캐이스를 이용해서 디렉티브 이름을 일관적으로 지어주세요. 짧은 접두어를 사용하여 이 디렉티브가 어떤 프로젝트 혹은 회사에 소속되어 있는지 알려주세요.
 
     *이유*: 일관된 방식으로 컴포넌트를 찾아내고 참조할 수 있도록 합니다.
@@ -2114,10 +2129,10 @@ Angular 팀의 리더인 Igor Minar 에게 특별히 감사합니다. 이 스타
 
     만약 다음 가이드라인에 적합하지 않는 부분이 있다고 느껴지면, 위로 돌아가서 LIFT 가이드라인을 다시 살펴보세요.
 
-    1. `L`코드를 쉽게 찾아낼 수 있음
-    2. `I`첫눈에 구분할 수 있음
-    3. `F`단순한 구조를 유지할 수 있음
-    4. `T`반복작업을 피할 수 있음
+    1. `L`코드를 쉽게 찾아낼 수 있음 (Locate)
+    2. `I`첫눈에 구분할 수 있음 (Identify)
+    3. `F`단순한 구조를 유지할 수 있음 (Flat)
+    4. `T`반복작업을 피할 수 있음 (T-DRY)
 
 ### Locate
 ###### [Style [Y141](#style-y141)]
@@ -2234,7 +2249,7 @@ Angular 팀의 리더인 Igor Minar 에게 특별히 감사합니다. 이 스타
             session-detail.controller.js
     ```
 
-      ![심플한 앱 구조](https://raw.githubusercontent.com/johnpapa/angular-styleguide/master/assets/modularity-2.png)
+      ![심플한 앱 구조](https://raw.githubusercontent.com/johnpapa/angular-styleguide/master/a1/assets/modularity-2.png)
 
       주의: 타입별로 묶어서 폴더를 만드는 식으로 앱 구조를 만들지 마세요. 한 가지 기능에 대해서 일하려면 여러 폴더를 옮겨 다녀야 합니다. 이는 앱이 5, 10 또는 25 이상의 뷰와 컨트롤러(또는 다른 기능들)를 갖게되면 기능으로 나뉜 폴더일 경우보다 금방 거추장스러워 집니다.
 
@@ -2311,7 +2326,7 @@ Angular 팀의 리더인 Igor Minar 에게 특별히 감사합니다. 이 스타
 
   - 레이아웃 같은 기능 구역을 나타내는 모듈들, 재사용 가능하고 공유가 가능한 서비스, 대시보드, 특화된 기능들을 모듈로 만드세요 (예를 들어 고객, 어드민, 판매).
 
-    *이유*: 자극 자족적인 모듈들은 어플리케이션에 아주 작은 충돌 혹은 아무 충돌 없이 추가될 수 있습니다.
+    *이유*: 자급자족적인 모듈들은 어플리케이션에 아주 작은 충돌 혹은 아무 충돌 없이 추가될 수 있습니다.
 
     *이유*: 스프린트나 이터레이션은 기능 구역에 집중될 수 있고 마지막 부분에 켜질 수 있습니다.
 
@@ -2329,7 +2344,7 @@ Angular 팀의 리더인 Igor Minar 에게 특별히 감사합니다. 이 스타
 
   - 어플리케이션의 루트 모듈은 앱 특화된 기능모듈 그리고 재사용되고 공유된 모듈들에 의존하게 됩니다.
 
-    ![모듈화 그리고 의존성](https://raw.githubusercontent.com/johnpapa/angular-styleguide/master/assets/modularity-1.png)
+    ![모듈화 그리고 의존성](https://raw.githubusercontent.com/johnpapa/angular-styleguide/master/a1/assets/modularity-1.png)
 
     *이유*: 주요 앱 모듈은 어플리케이션의 기능들을 빠르게 구분할 수 있는 목록을 가지고 있습니다.
 
@@ -2425,7 +2440,6 @@ Angular 팀의 리더인 Igor Minar 에게 특별히 감사합니다. 이 스타
 ### Write Tests with Stories
 ###### [Style [Y190](#style-y190)]
 
-  - Write a set of tests for every story. Start with an empty test and fill them in as you write the code for the story.
   - 모든 각각의 스토리를 위해서 테스트 세트를 작성하세요. 빈 테스트로 시작을 하고 스토리에 맞추어 코드를 작성하면서 채워나가세요.
 
     *이유*: 테스트 설명을 작성함으로 스스로의 스토리가 어떻게 작동해야 하고 어떻게 작동하지 말아야 하는지 투명하게 정의할 수 있습니다. 그리고 성공을 어떻게 측정해야 하는지도 포함됩니다.
@@ -2562,7 +2576,7 @@ Angular 팀의 리더인 Igor Minar 에게 특별히 감사합니다. 이 스타
     "mocha": true,
     ```
 
-  ![테스팅 도구들](https://raw.githubusercontent.com/johnpapa/angular-styleguide/master/assets/testing-tools.png)
+  ![테스팅 도구들](https://raw.githubusercontent.com/johnpapa/angular-styleguide/master/a1/assets/testing-tools.png)
 
 
 ### Organizing Tests
@@ -2572,7 +2586,7 @@ Angular 팀의 리더인 Igor Minar 에게 특별히 감사합니다. 이 스타
 
     *이유*: 단위 테스트는 소스 코드의 특정 컴포넌트와 파일들과 직접적인 상호작용을 합니다.
 
-    *이유*: 항상 눈에 보여지게 됨으로 최신으로 유지하기가 쉽습ㄴ디ㅏ. TDD 또는 개발중 테스트 또는 개발 후 테스트 중 어떤 것을 사용하든 테스트 스팩은 나란히 보여지고 눈에서 멀어지기 어렵고 마음에서도 멀어지기 어렵습니다. 그러니 코드를 테스팅하는 코드도 유지보수하기 쉬워집니다.
+    *이유*: 항상 눈에 보여지게 됨으로 최신으로 유지하기가 쉽습니다. TDD 또는 개발중 테스트 또는 개발 후 테스트 중 어떤 것을 사용하든 테스트 스팩은 나란히 보여지고 눈에서 멀어지기 어렵고 마음에서도 멀어지기 어렵습니다. 그러니 코드를 테스팅하는 코드도 유지보수하기 쉬워집니다.
 
     *이유*: 소스코드를 수정하게 될 때 테스트도 동시에 수정하기가 매우 쉽습니다. 한폴더에 있고 보여지니까요.
 
@@ -2871,7 +2885,7 @@ Angular 팀의 리더인 Igor Minar 에게 특별히 감사합니다. 이 스타
 
 ###### [Style [Y241](#style-y241)]
 
-  - 변하지 않고 다른 서비스로부터 오지 않는 값들은 불변 상수를 이용하세요. 다양한 어플리케이션에서 재사용될 수 있는 모듈 내에서 사용되는 불변상 수들은 모듈의 이름을 딴 상수 파일을 만들어서 넣어두세요. 이 작업이 필요하기 전까지는 불변 상수는 메인 모듈의 `constants.js` 파일에 넣어두면 됩니다.
+  - 변하지 않고 다른 서비스로부터 오지 않는 값들은 불변 상수를 이용하세요. 다양한 어플리케이션에서 재사용될 수 있는 모듈 내에서 사용되는 불변 상수들은 모듈의 이름을 딴 상수 파일을 만들어서 넣어두세요. 이 작업이 필요하기 전까지는 불변 상수는 메인 모듈의 `constants.js` 파일에 넣어두면 됩니다.
 
     *이유*: 자주 변하지 않더라도 변할 가능성이 있는 값들은 서비스로부터 받아서 사용해야 소스코드를 변경하지 않아도 되게 됩니다. 예를 들어 데이터를 받아오는 url 값은 상수로 저장해서 사용할 수도 있지만, 더 좋은 곳은 웹서비스로 부터 받아오는 것입니다.
 
@@ -2897,7 +2911,6 @@ Angular 팀의 리더인 Igor Minar 에게 특별히 감사합니다. 이 스타
 **[Back to top](#table-of-contents)**
 
 ## File Templates and Snippets
-Use file templates or snippets to help follow consistent styles and patterns. Here are templates and/or snippets for some of the web development editors and IDEs.
 파일 템플릿이나 스니펫을 사용하면 일관적인 스타일과 패턴을 지킬수 있습니다. 웹 개발용 에디터와 IDE들에서 사용 가능한 템플릿과 스니펫을 알려 드리겠습니다.
 
 ### Sublime Text
@@ -3176,7 +3189,7 @@ Use file templates or snippets to help follow consistent styles and patterns. He
 **[Back to top](#table-of-contents)**
 
 ## Task Automation
-[Gulp](http://gulpjs.com) 또는 [Grunt](http://gruntjs.com)를 사용하여 자동화 처리를 사용하세요. Gult는 설정보다는 코드 자체에 무게를 더 주는 반면 Grunt는 설정을 더 중요하게 생각합니다. 개인적으로는 읽고 작성하기가 쉬워서 Gulp를 선호합니다. 하지만 둘다 정말 멋집니다.
+[Gulp](http://gulpjs.com) 또는 [Grunt](http://gruntjs.com)를 사용하여 자동화 처리를 사용하세요. Gulp는 설정보다는 코드 자체에 무게를 더 주는 반면 Grunt는 설정을 더 중요하게 생각합니다. 개인적으로는 읽고 작성하기가 쉬워서 Gulp를 선호합니다. 하지만 둘다 정말 멋집니다.
 
 > 여기를 참고하여 gulp 자동화 업무 패턴을 배우세요 [Gulp Pluralsight course](http://jpapa.me/gulpps).
 
@@ -3211,13 +3224,13 @@ Use file templates or snippets to help follow consistent styles and patterns. He
 **[Back to top](#table-of-contents)**
 
 ## Angular docs
-나머지 부분, API 참고는 [Angular 문서](//docs.angularjs.org/api)여기로 가시면 됩니다.
+나머지 부분, API 참고는 [Angular 문서](//docs.angularjs.org/api)로 가시면 됩니다.
 
 ## Contributing
 
 수정과 추가를 위해서는 이슈를 먼저 발행하시기 바랍니다. 이 가이드에 질문이 있으면 리파지토리에 이슈를 남겨주세요. 오타를 발견하면 pull request를 만들어주세요. 이렇게 하는 이유는 github의 기능을 최대한 사용해서 이슈와 PR이 어떻게 이루어 졌는지를 알려주기 위함입니다. 이런 정보는 구글로 검색도 가능합니다. 왜냐구요? 이상하게도 당신이 질문이 있다면 다른사람들도 그런 질문을 가지기 때문입니다. 여기서 어떻게 기여할 수 있는지 배울 수 있습니다.
 
-*이 저장소에 기여함으로서 당신의 콘텐츠가 이 저장소의 라이센트의 대상이 됨을 동의합니다.*
+*이 저장소에 기여함으로서 당신의 콘텐츠가 이 저장소의 라이센스의 대상이 됨을 동의합니다.*
 
 ### Process
     1. Discuss the changes in a GitHub issue.
